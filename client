@@ -1,0 +1,6 @@
+[client]
+database = cr
+host = localhost
+user = cr
+password = cr_12345678
+default-character-set = utf8

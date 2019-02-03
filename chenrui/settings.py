@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'chenrui.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'base.db.mysql_enhanced',
+        'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': os.path.join(BASE_DIR, 'client')
         },

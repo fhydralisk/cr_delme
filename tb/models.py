@@ -6,17 +6,18 @@ from django.db import models
 # Create your models here.
 
 
-gps_field = models.DecimalField(max_digits=9, decimal_places=6)
+def gps_field():
+    return models.DecimalField(max_digits=9, decimal_places=6)
 
 
 class Image(models.Model):
     ImageFile = models.ImageField()
     IWidth = models.IntegerField()
     IHeigth = models.IntegerField()
-    ILongitude = gps_field
-    ILatitude = gps_field
-    ILongitude2 = gps_field
-    ILatitude2 = gps_field
+    ILongitude = gps_field()
+    ILatitude = gps_field()
+    ILongitude2 = gps_field()
+    ILatitude2 = gps_field()
 
 
 class ControlPoint(models.Model):
@@ -29,8 +30,8 @@ class ControlPoint(models.Model):
     CPType = models.CharField(max_length=16, null=True, blank=True)
     CPGrade = models.CharField(max_length=8, null=True, blank=True)
     Reference = models.CharField(max_length=10, null=True, blank=True)
-    WGS84Longitude = gps_field
-    WGS84Latitude = gps_field
+    WGS84Longitude = gps_field()
+    WGS84Latitude = gps_field()
     CPElevation = models.CharField(max_length=9, null=True, blank=True)
     CPImage = models.ForeignKey(to=Image, related_name='image')
     CPImgType = models.CharField(max_length=15, null=True, blank=True)
